@@ -87,6 +87,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
             this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
+            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
             // gestionDeClientesToolStripMenuItem
             // 

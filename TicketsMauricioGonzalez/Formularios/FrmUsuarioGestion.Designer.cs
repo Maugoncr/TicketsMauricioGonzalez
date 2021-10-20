@@ -32,6 +32,12 @@ namespace TicketsMauricioGonzalez.Formularios
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbRol = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtContrasennia = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,12 +46,6 @@ namespace TicketsMauricioGonzalez.Formularios
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIDUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtContrasennia = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbRol = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -96,6 +96,56 @@ namespace TicketsMauricioGonzalez.Formularios
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Usuario";
+            // 
+            // cbRol
+            // 
+            this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRol.FormattingEnabled = true;
+            this.cbRol.Location = new System.Drawing.Point(448, 101);
+            this.cbRol.Name = "cbRol";
+            this.cbRol.Size = new System.Drawing.Size(147, 21);
+            this.cbRol.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(416, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Rol:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(378, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Contraseña:";
+            // 
+            // txtContrasennia
+            // 
+            this.txtContrasennia.Location = new System.Drawing.Point(448, 74);
+            this.txtContrasennia.Name = "txtContrasennia";
+            this.txtContrasennia.Size = new System.Drawing.Size(147, 20);
+            this.txtContrasennia.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(305, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Email / Nombre de Usuario:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(448, 47);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(147, 20);
+            this.txtEmail.TabIndex = 8;
             // 
             // label4
             // 
@@ -163,56 +213,6 @@ namespace TicketsMauricioGonzalez.Formularios
             this.label1.TabIndex = 0;
             this.label1.Text = "Cód. Usuario";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(305, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Email / Nombre de Usuario:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(448, 47);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(147, 20);
-            this.txtEmail.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Contraseña:";
-            // 
-            // txtContrasennia
-            // 
-            this.txtContrasennia.Location = new System.Drawing.Point(448, 74);
-            this.txtContrasennia.Name = "txtContrasennia";
-            this.txtContrasennia.Size = new System.Drawing.Size(147, 20);
-            this.txtContrasennia.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(416, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Rol:";
-            // 
-            // cbRol
-            // 
-            this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(448, 101);
-            this.cbRol.Name = "cbRol";
-            this.cbRol.Size = new System.Drawing.Size(147, 21);
-            this.cbRol.TabIndex = 13;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Green;
@@ -224,6 +224,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -277,6 +278,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Usuarios";
+            this.Load += new System.EventHandler(this.FrmUsuarioGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

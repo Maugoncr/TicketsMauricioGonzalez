@@ -35,5 +35,17 @@ namespace TicketsMauricioGonzalez.Formularios
 
 
         }
+
+        private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            // Mostramos el formulario global de gestion de usuarios
+
+            Commons.ObjetosGlobales.FormularioGestionDeUsuarios.Show();
+
+
+
+
+        }
     }
 }
