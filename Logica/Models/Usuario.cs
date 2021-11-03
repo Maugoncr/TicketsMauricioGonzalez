@@ -103,6 +103,31 @@ namespace Logica.Models
         { 
             Usuario R = new Usuario();
 
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", ID));
+
+            DataTable DatosUsuario = new DataTable();
+
+            DatosUsuario = MiCnn.DMLSelect("SPUsuarioConsultarPorID");
+
+            if (DatosUsuario != null && DatosUsuario.Rows.Count == 1)
+            {
+
+                DataRow Fila = DatosUsuario.Rows[0];
+
+                R.IDUsuario = ID;
+                R.Nombre = Convert.ToString(Fila["Nombre"]);
+                R.Cedula = Convert.ToString(Fila["Cedula"]);
+                R.Telefono = Convert.ToString(Fila["Telefono"]);
+                R.Email = Convert.ToString(Fila["Email"]);
+                R.Contrasennia = Convert.ToString(Fila["Contrasennia"]);
+                R.MiRol.IDUsuarioRol = Convert.ToInt32(Fila["IDUsuarioRol"]);
+
+
+            }
+
+
             return R;
         }
 
@@ -165,6 +190,9 @@ namespace Logica.Models
         {
             DataTable R = new DataTable();
 
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.DMLSelect("SPUsuariosListar");
 
             return R;
         }
