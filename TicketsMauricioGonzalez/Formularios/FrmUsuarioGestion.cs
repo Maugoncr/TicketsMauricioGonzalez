@@ -293,8 +293,20 @@ namespace TicketsMauricioGonzalez.Formularios
         {
             if (!string.IsNullOrEmpty(txtContrasennia.Text.Trim()))
             {
-                MiUsuarioLocal.Contrasennia = txtContrasennia.Text.Trim();
-
+                if (Commons.ObjetosGlobales.ValidarContrasennia(txtContrasennia.Text.Trim()))
+                {
+                    MiUsuarioLocal.Contrasennia = txtContrasennia.Text.Trim();
+                }
+                else {
+                    MessageBox.Show("El formato de la contraseña no es correcto!!\n" +
+                        "1. Debe contener al menos una mayuscula y una miniscula\n" +
+                        "2. Debe tener una longitud minima de 8 caracteres\n"+
+                        "2. Debe contener al menos un numero impar\n" +
+                        "3. Debe contener al menos un caracter especial\n"
+                        , "Error de validacion", MessageBoxButtons.OK);
+                    txtContrasennia.Focus();
+                    txtContrasennia.SelectAll();
+                }
             }
             else {
 

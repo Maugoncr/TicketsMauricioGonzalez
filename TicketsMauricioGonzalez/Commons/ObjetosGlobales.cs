@@ -148,7 +148,38 @@ namespace TicketsMauricioGonzalez.Commons
         // Se definen los objetos (Basados en clases) que deben ser accesibles desde cualquier lugar de la app
         public static Logica.Models.Usuario MiUsuarioDeSistema = new Logica.Models.Usuario();
 
+        public static bool ValidarContrasennia(string pass)
+        {
+            bool mayuscula = false, minuscula = false, numeroImpar = false, caracterEspecial = false;
 
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (Char.IsUpper(pass, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsLower(pass, i))
+                {
+                    minuscula = true;
+                }
+                else if (Char.IsDigit(pass, i))
+                {
+                    if (pass[i] % 2 == 1)
+                    {
+                        numeroImpar = true;
+                    }
+                }
+                else
+                {
+                    caracterEspecial = true;                
+                }
+            }
+            if (mayuscula && minuscula && numeroImpar && caracterEspecial && pass.Length >= 8)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
     }
