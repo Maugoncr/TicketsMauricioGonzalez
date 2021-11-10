@@ -93,7 +93,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.DgvListaUsuarios.Size = new System.Drawing.Size(680, 256);
             this.DgvListaUsuarios.TabIndex = 1;
             this.DgvListaUsuarios.VirtualMode = true;
-            this.DgvListaUsuarios.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaUsuarios_RowEnter);
+            this.DgvListaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaUsuarios_CellClick);
             // 
             // CIDUsuario
             // 
@@ -267,6 +267,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(147, 20);
             this.txtEmail.TabIndex = 8;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // label4
@@ -302,6 +303,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(147, 20);
             this.txtCedula.TabIndex = 4;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // label2
@@ -319,6 +321,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(147, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // txtIDUsuario
@@ -375,6 +378,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 

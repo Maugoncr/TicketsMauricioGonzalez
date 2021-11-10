@@ -40,6 +40,7 @@ namespace TicketsMauricioGonzalez.Formularios
         {
 
             // Mostramos el formulario global de gestion de usuarios
+            Commons.ObjetosGlobales.FormularioGestionDeUsuarios = new FrmUsuarioGestion();
 
             Commons.ObjetosGlobales.FormularioGestionDeUsuarios.Show();
 
