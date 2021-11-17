@@ -37,6 +37,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.LblRecuperarContrasennia = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnIngresoDirecto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,6 +143,17 @@ namespace TicketsMauricioGonzalez.Formularios
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
+            // BtnIngresoDirecto
+            // 
+            this.BtnIngresoDirecto.Location = new System.Drawing.Point(503, 34);
+            this.BtnIngresoDirecto.Name = "BtnIngresoDirecto";
+            this.BtnIngresoDirecto.Size = new System.Drawing.Size(148, 33);
+            this.BtnIngresoDirecto.TabIndex = 8;
+            this.BtnIngresoDirecto.Text = "Ingreso Directo";
+            this.BtnIngresoDirecto.UseVisualStyleBackColor = true;
+            this.BtnIngresoDirecto.Visible = false;
+            this.BtnIngresoDirecto.Click += new System.EventHandler(this.BtnIngresoDirecto_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -150,6 +162,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.BackgroundImage = global::TicketsMauricioGonzalez.Properties.Resources.backgrounpapp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(712, 428);
+            this.Controls.Add(this.BtnIngresoDirecto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblRecuperarContrasennia);
             this.Controls.Add(this.label2);
@@ -160,10 +173,12 @@ namespace TicketsMauricioGonzalez.Formularios
             this.Controls.Add(this.txtEmail);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +195,6 @@ namespace TicketsMauricioGonzalez.Formularios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel LblRecuperarContrasennia;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnIngresoDirecto;
     }
 }
