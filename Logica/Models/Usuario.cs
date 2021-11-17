@@ -113,6 +113,25 @@ namespace Logica.Models
             return R;
         }
 
+        public bool Activar()
+        {
+            bool R = false;
+
+            Conexion MiCnn = new Conexion();
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.IDUsuario));
+
+            int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioActivar");
+
+            if (retorno == 1)
+            {
+                R = true;
+            }
+
+            return R;
+
+        }
+
+
         // adicionales
 
         public int IDUsuario { get; set; }
@@ -234,13 +253,16 @@ namespace Logica.Models
 
         }
 
-        public DataTable Listar(bool VerActivos = true)
+        public DataTable Listar(bool VerActivos, string Filtro = "")
         {
             DataTable R = new DataTable();
 
             Conexion MiCnn = new Conexion();
 
             MiCnn.ListadoDeParametros.Add(new SqlParameter("@VerActivos", VerActivos));
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+
 
             R = MiCnn.DMLSelect("SPUsuariosListar");
 
