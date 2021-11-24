@@ -12,8 +12,14 @@ namespace TicketsMauricioGonzalez.Formularios
 {
     public partial class FrmLogin : Form
     {
+
+        static int contador = 0;
+        static Keys[] vector = {Keys.None, Keys.None, Keys.None, Keys.None, Keys.None, Keys.None, Keys.None, Keys.None, Keys.None, Keys.None};
+        static Keys[] vector1 = {Keys.Up, Keys.Up, Keys.Down, Keys.Down, Keys.Left, Keys.Right, Keys.Left, Keys.Right, Keys.A, Keys.B};
+
         public FrmLogin()
         {
+
             InitializeComponent();
         }
 
@@ -154,24 +160,12 @@ namespace TicketsMauricioGonzalez.Formularios
 
             }
 
+            // Crear un contador static que se vaya incrementando a como vaya pasando if
+            // crear un if donde valide un vector con [contador] con la combinacion exacta de teclas
+            // if que espere arriba, arriba, abajo, abajo, iz, derecha, iz, derecha, a, b
+            // si alguno de los if no se cumple ya sea que caiga antes o en el medio recurrir a la funcion que limpie el vector y regrese el contador = 0
 
-            /*
-            List<int> combinacion = new List<int>();
-            combinacion.Add(38);
-            combinacion.Add(38);
-            combinacion.Add(40);
-            combinacion.Add(40);
-            combinacion.Add(37);
-            combinacion.Add(39);
-            combinacion.Add(37);
-            combinacion.Add(39);
-            combinacion.Add(65);
-            combinacion.Add(66);
-            */
-
-
-
-
+            //ValidarTeclas(e);
 
         }
 
@@ -182,31 +176,132 @@ namespace TicketsMauricioGonzalez.Formularios
 
             Commons.ObjetosGlobales.FormularioRecuperacionContrasennia.Show();
 
+        }
 
-
-
-
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
 
         }
 
+        private void ValidarTeclas(KeyEventArgs e)
+        {
+            
+            FrmLogin.vector[contador] = e.KeyCode;
 
-        /*
-        private void LeerTeclas() {
-
-            ConsoleKeyInfo TECLAS;
-
-            do
+            if (vector[9] != Keys.None)
             {
-                TECLAS = Console.ReadKey(true);
-                Console.WriteLine(TECLAS.Key);
-            }ehile (TECLAS !)
+                if (vector[0] == Keys.Up)
+                {
+                    
+
+                    if (vector[1] == Keys.Up)
+                    {
+                       
+                        if (vector[2] == Keys.Down)
+                        {
+                            
+                            if (vector[3] == Keys.Down)
+                            {
+                                
+                                if (vector[4] == Keys.Left)
+                                {
+                                    
+                                    if (vector[5] == Keys.Right)
+                                    {
+                                     
+                                        if (vector[6] == Keys.Left)
+                                        {
+                                          
+                                            if (vector[7] == Keys.Right)
+                                            {
+                                                
+                                                if (vector[8] == Keys.A)
+                                                {
+                                                 
+                                                    if (vector[9] == Keys.B)
+                                                    {
+                                                        BtnIngresoDirecto.Visible = true;
+                                                    }
+                                                    else
+                                                    {
+                                                        Reset();
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    Reset();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                Reset();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Reset();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Reset();
+                                    }
+                                }
+                                else
+                                {
+                                    Reset();
+                                }
+                            }
+                            else
+                            {
+                                Reset();
+                            }
+                        }
+                        else
+                        {
+                            Reset();
+                        }
+                    }
+                    else
+                    {
+                        Reset();
+                    }
+                }
+                else
+                {
+                    Reset();
+                }
+            }
+            else
+            {
+                contador++;
+            }
+
+         
+
         }
 
-        */
 
+            private void Reset() {
 
+             contador = 0;
+             vector[0] = Keys.None;
+             vector[1] = Keys.None;
+             vector[2] = Keys.None;
+             vector[3] = Keys.None;
+             vector[4] = Keys.None;
+             vector[5] = Keys.None;
+             vector[6] = Keys.None;
+             vector[7] = Keys.None;
+             vector[8] = Keys.None;
+             vector[9] = Keys.None;
+        }
 
+        private void FrmLogin_KeyUp(object sender, KeyEventArgs e)
+        {
 
+            ValidarTeclas(e);
 
+        }
     }
 }
