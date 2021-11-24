@@ -182,5 +182,7 @@ namespace TicketsMauricioGonzalez.Commons
         }
 
 
+        public static Formularios.FrmUsuarioRecuperarContrasennia FormularioRecuperacionContrasennia = new Formularios.FrmUsuarioRecuperarContrasennia();
+
     }
 }

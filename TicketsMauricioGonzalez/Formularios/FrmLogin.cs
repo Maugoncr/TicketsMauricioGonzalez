@@ -149,12 +149,64 @@ namespace TicketsMauricioGonzalez.Formularios
         {
             if (e.Shift & e.KeyCode == Keys.A )
             {
+
                 BtnIngresoDirecto.Visible = true;
 
             }
 
 
-           
+            /*
+            List<int> combinacion = new List<int>();
+            combinacion.Add(38);
+            combinacion.Add(38);
+            combinacion.Add(40);
+            combinacion.Add(40);
+            combinacion.Add(37);
+            combinacion.Add(39);
+            combinacion.Add(37);
+            combinacion.Add(39);
+            combinacion.Add(65);
+            combinacion.Add(66);
+            */
+
+
+
+
+
         }
+
+        private void LblRecuperarContrasennia_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            Commons.ObjetosGlobales.FormularioRecuperacionContrasennia.txtUsuario.Text = this.txtEmail.Text.Trim();
+
+            Commons.ObjetosGlobales.FormularioRecuperacionContrasennia.Show();
+
+
+
+
+
+
+        }
+
+
+        /*
+        private void LeerTeclas() {
+
+            ConsoleKeyInfo TECLAS;
+
+            do
+            {
+                TECLAS = Console.ReadKey(true);
+                Console.WriteLine(TECLAS.Key);
+            }ehile (TECLAS !)
+        }
+
+        */
+
+
+
+
+
     }
 }
