@@ -70,7 +70,7 @@ namespace TicketsMauricioGonzalez.Formularios
                         //Este codigo se deberia generar aleatoriamente.
                         // TO DO: ???
 
-                        string CodigoVerificacion = "ABC123*";
+                         string CodigoVerificacion = GenerarCode();
 
 
                         if (MyUser.EnviarCodigoRecuperacion(CodigoVerificacion))
@@ -211,6 +211,20 @@ namespace TicketsMauricioGonzalez.Formularios
 
 
             return R;
+        }
+
+
+        private string GenerarCode() {
+
+            var Caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz*/-";
+            var Code = new char[8];
+            var random = new Random();
+            for (int i = 0; i < Code.Length; i++)
+            {
+                Code[i] = Caracteres[random.Next(Caracteres.Length)];
+            }
+            var codeResultado = new String(Code);
+            return codeResultado;
         }
 
 
