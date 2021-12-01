@@ -134,16 +134,18 @@ namespace TicketsMauricioGonzalez.Formularios
             this.creacionDeTicketToolStripMenuItem.BackColor = System.Drawing.Color.DimGray;
             this.creacionDeTicketToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.creacionDeTicketToolStripMenuItem.Name = "creacionDeTicketToolStripMenuItem";
-            this.creacionDeTicketToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.creacionDeTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.creacionDeTicketToolStripMenuItem.Text = "Creacion de Ticket";
+            this.creacionDeTicketToolStripMenuItem.Click += new System.EventHandler(this.creacionDeTicketToolStripMenuItem_Click);
             // 
             // solucionDeTicketToolStripMenuItem
             // 
             this.solucionDeTicketToolStripMenuItem.BackColor = System.Drawing.Color.DimGray;
             this.solucionDeTicketToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.solucionDeTicketToolStripMenuItem.Name = "solucionDeTicketToolStripMenuItem";
-            this.solucionDeTicketToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.solucionDeTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.solucionDeTicketToolStripMenuItem.Text = "Solucion de Ticket";
+            this.solucionDeTicketToolStripMenuItem.Click += new System.EventHandler(this.solucionDeTicketToolStripMenuItem_Click);
             // 
             // rEPORTESToolStripMenuItem
             // 

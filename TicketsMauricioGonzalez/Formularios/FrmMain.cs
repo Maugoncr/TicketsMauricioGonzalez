@@ -50,5 +50,19 @@ namespace TicketsMauricioGonzalez.Formularios
 
 
         }
+
+        private void creacionDeTicketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Commons.ObjetosGlobales.FormCrearTicket = new FrmTicketCrear();
+            Commons.ObjetosGlobales.FormCrearTicket.Show();
+
+
+        }
+
+        private void solucionDeTicketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Commons.ObjetosGlobales.FormAtencion = new FrmAtencionDeTickets();
+            Commons.ObjetosGlobales.FormAtencion.Show();
+        }
     }
 }

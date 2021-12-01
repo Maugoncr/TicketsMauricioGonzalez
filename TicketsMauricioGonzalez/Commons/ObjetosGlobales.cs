@@ -143,10 +143,14 @@ namespace TicketsMauricioGonzalez.Commons
 
         public static Formularios.FrmUsuarioGestion FormularioGestionDeUsuarios = new Formularios.FrmUsuarioGestion();
 
-
+        public static Formularios.FrmUsuarioRecuperarContrasennia FormularioRecuperacionContrasennia = new Formularios.FrmUsuarioRecuperarContrasennia();
 
         // Se definen los objetos (Basados en clases) que deben ser accesibles desde cualquier lugar de la app
         public static Logica.Models.Usuario MiUsuarioDeSistema = new Logica.Models.Usuario();
+
+        public static Formularios.FrmTicketCrear FormCrearTicket = new Formularios.FrmTicketCrear();
+
+        public static Formularios.FrmAtencionDeTickets FormAtencion = new Formularios.FrmAtencionDeTickets();
 
         public static bool ValidarContrasennia(string pass)
         {
@@ -180,9 +184,6 @@ namespace TicketsMauricioGonzalez.Commons
             }
             return false;
         }
-
-
-        public static Formularios.FrmUsuarioRecuperarContrasennia FormularioRecuperacionContrasennia = new Formularios.FrmUsuarioRecuperarContrasennia();
 
     }
 }

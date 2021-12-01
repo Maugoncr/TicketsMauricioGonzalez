@@ -45,21 +45,23 @@ namespace TicketsMauricioGonzalez.Formularios
             // 
             // txtIdUsuario
             // 
+            this.txtIdUsuario.BackColor = System.Drawing.Color.Moccasin;
             this.txtIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdUsuario.Location = new System.Drawing.Point(68, 28);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(186, 26);
             this.txtIdUsuario.TabIndex = 0;
+            this.txtIdUsuario.DoubleClick += new System.EventHandler(this.txtIdUsuario_DoubleClick);
             // 
             // lblClienteNombre
             // 
             this.lblClienteNombre.AutoSize = true;
             this.lblClienteNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteNombre.Location = new System.Drawing.Point(272, 35);
+            this.lblClienteNombre.Location = new System.Drawing.Point(260, 32);
             this.lblClienteNombre.Name = "lblClienteNombre";
-            this.lblClienteNombre.Size = new System.Drawing.Size(51, 16);
+            this.lblClienteNombre.Size = new System.Drawing.Size(56, 16);
             this.lblClienteNombre.TabIndex = 1;
-            this.lblClienteNombre.Text = "label1";
+            this.lblClienteNombre.Text = "Cliente";
             // 
             // label2
             // 
@@ -77,7 +79,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.CboxCategoria.FormattingEnabled = true;
             this.CboxCategoria.Location = new System.Drawing.Point(68, 71);
             this.CboxCategoria.Name = "CboxCategoria";
-            this.CboxCategoria.Size = new System.Drawing.Size(162, 28);
+            this.CboxCategoria.Size = new System.Drawing.Size(248, 28);
             this.CboxCategoria.TabIndex = 3;
             // 
             // label3
@@ -98,9 +100,10 @@ namespace TicketsMauricioGonzalez.Formularios
             // 
             // txtTitulo
             // 
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Location = new System.Drawing.Point(30, 139);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(723, 20);
+            this.txtTitulo.Size = new System.Drawing.Size(723, 24);
             this.txtTitulo.TabIndex = 6;
             // 
             // txtDescripcion
@@ -131,7 +134,6 @@ namespace TicketsMauricioGonzalez.Formularios
             this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "DESCRIPCION";
-           
             // 
             // btnAceptar
             // 
@@ -145,6 +147,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -182,6 +185,7 @@ namespace TicketsMauricioGonzalez.Formularios
             this.Name = "FrmTicketCrear";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Ticket";
+            this.Load += new System.EventHandler(this.FrmTicketCrear_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

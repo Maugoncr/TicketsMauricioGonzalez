@@ -82,12 +82,19 @@ namespace Logica.Models
         }
 
 
-        public DataTable ListarActivos()
+        public DataTable ListarActivos(string filtro = "")
         {
             DataTable R = new DataTable();
 
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new System.Data.SqlClient.SqlParameter("@Filtro", filtro));
+
+            R = MiCnn.DMLSelect("SPClienteBuscar");
+
+
+
             return R;
-        
         }
 
         public DataTable ListarInactivos()
