@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -143,9 +144,37 @@ namespace TicketsMauricioGonzalez.Formularios
                 if (MiTicket.Agregar())
                 {
                     MessageBox.Show("Ticket Agregado Correctamente", ":)", MessageBoxButtons.OK);
-                    LimpiarForm();
-                    //TODO Implementar un reporte de crystal para poderlo imprimir y que quede
+                    
+                    // Implementar un reporte de crystal para poderlo imprimir y que quede
                     // como atestado de creacion del ticket
+
+                    try
+                    {
+                        ReportDocument MiReporte = new ReportDocument();
+
+                        MiReporte = new Reports.RptTicket();
+
+                        MiReporte = MiTicket.Imprimir(MiReporte);
+
+                        FrmVizualizarReportes MiVisualizador = new FrmVizualizarReportes();
+
+                        MiVisualizador.CrvVisualizador.ReportSource = MiReporte;
+
+                        MiVisualizador.Show();
+
+                        MiVisualizador.CrvVisualizador.Zoom(1);
+
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+
+
+                    LimpiarForm();
+                   
 
                 }
 
