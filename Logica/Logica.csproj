@@ -115,6 +115,7 @@
     <Compile Include="Crypto.cs" />
     <Compile Include="Crystal.cs" />
     <Compile Include="Email.cs" />
+    <Compile Include="Models\Bitacora.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteCategoria.cs" />
     <Compile Include="Models\Conexion.cs" />

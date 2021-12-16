@@ -89,6 +89,12 @@ namespace TicketsMauricioGonzalez.Formularios
                             {
                                 MessageBox.Show("Correo enviado correctamente", ":)", MessageBoxButtons.OK);
 
+                                Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                                string accion = "Se envio correctamente un correo a: " + txtUsuario.Text.Trim() + " para la solicitud de cambio de contraseña";
+
+                                MiBitacora.GuardarAccionBitacora(accion, MyUser.IDUsuario);
+
                                 txtCodigoEnviado.Enabled = true;
                                 txtPass1.Enabled = true;
                                 txtPass2.Enabled = true;
@@ -98,6 +104,13 @@ namespace TicketsMauricioGonzalez.Formularios
                             else
                             {
                                 MessageBox.Show("El correo no se pudo enviar!", ":(", MessageBoxButtons.OK);
+
+                                Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                                string accion = "Se intento de forma fallida enviar un correo a: " + txtUsuario.Text.Trim() + " para la solicitud de cambio de contraseña";
+
+                                MiBitacora.GuardarAccionBitacora(accion);
+
                             }
 
                         }
@@ -107,6 +120,13 @@ namespace TicketsMauricioGonzalez.Formularios
                     else
                     {
                         MessageBox.Show("El correo no existe o al usuario está desactivado", "Error de validación", MessageBoxButtons.OK);
+
+                        Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                        string accion = "Se intento de forma fallida enviar un correo a: " + txtUsuario.Text.Trim() + " para la solicitud de cambio de contraseña";
+
+                        MiBitacora.GuardarAccionBitacora(accion);
+
                     }
                 }
 

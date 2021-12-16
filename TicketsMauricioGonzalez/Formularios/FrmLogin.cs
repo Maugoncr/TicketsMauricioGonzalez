@@ -103,7 +103,8 @@ namespace TicketsMauricioGonzalez.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
 
             if (ValidarDatos())
             {
@@ -116,8 +117,11 @@ namespace TicketsMauricioGonzalez.Formularios
 
                 if (MiUsuarioValidado != null && MiUsuarioValidado.IDUsuario > 0)
                 {
-                    Commons.ObjetosGlobales.MiUsuarioDeSistema = MiUsuarioValidado;
+                    string accion = "El usuario: " + txtEmail.Text.Trim() + " ingreso al sistema con exito!";
 
+                    MiBitacora.GuardarAccionBitacora(accion, MiUsuarioValidado.IDUsuario);
+
+                    Commons.ObjetosGlobales.MiUsuarioDeSistema = MiUsuarioValidado;
                     //muestro el objeto global del FrmMain
                     Commons.ObjetosGlobales.MiFormPrincipal.Show();
                     // Oculto (no destruyo) el form global
@@ -126,11 +130,14 @@ namespace TicketsMauricioGonzalez.Formularios
                 else {
 
                     MessageBox.Show("Usuario o Contraseña Incorrecto", "Error de Validacion", MessageBoxButtons.OK);
-                
+                    string accion = "Se intento ingresar al sistema de manera fallida con el usuario: " + txtEmail.Text.Trim();
+                    MiBitacora.GuardarAccionBitacora(accion);
                 }
-                
-
-
+            }
+            else
+            {
+                string accion = "Se intento ingresar al sistema de manera fallida con el usuario: " + txtEmail.Text.Trim();
+                MiBitacora.GuardarAccionBitacora(accion);
             }
 
         }

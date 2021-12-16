@@ -32,6 +32,11 @@ namespace TicketsMauricioGonzalez.Formularios
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             //TODO: Analizar si queremos hacer un logout cuando cerramos el principal
+            Logica.Models.Bitacora bitacora = new Logica.Models.Bitacora();
+
+            string accion = "Se cerro el sistema con el usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email;
+
+            bitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
 
             Application.Exit();
 

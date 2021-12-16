@@ -252,13 +252,27 @@ namespace TicketsMauricioGonzalez.Formularios
                         //1.6
                         if (MiUsuarioLocal.Agregar())
                         {
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                            string accion = "Se agrego un nuevo usuario llamado: " + txtNombre.Text.Trim() + " correctamente por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
+
                             MessageBox.Show("Usuario Agregado Correctamente", ":)", MessageBoxButtons.OK);
                             LimpiarFormulario();
                             LlenarListaUsuarios(CboxVerActivos.Checked);
+
+                           
                         }
                         else
                         {
                             MessageBox.Show("Ha ocurrido un error y no se ha guardado el usuario", ":(", MessageBoxButtons.OK);
+
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                            string accion = "Se intento de manera fallida agregar un nuevo usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                         }
                     }
                 }
@@ -270,12 +284,24 @@ namespace TicketsMauricioGonzalez.Formularios
 
                         MessageBox.Show("Ya existe un usuario con la cedula digitada", "Error de Validacion", MessageBoxButtons.OK);
 
+                        Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                        string accion = "Se intento de manera fallida agregar un nuevo usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+
+                        MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
+
                     }
 
                     if (OkEmail)
                     {
 
                         MessageBox.Show("Ya existe un usuario con el email ingresado", "Error de Validacion", MessageBoxButtons.OK);
+
+                        Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+
+                        string accion = "Se intento de manera fallida agregar un nuevo usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+
+                        MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
 
                     }
 
@@ -418,14 +444,25 @@ namespace TicketsMauricioGonzalez.Formularios
 
                         if (MiUsuarioLocal.Editar())
                         {
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se actualizo el usuario cuyo Cód es: " + txtIDUsuario.Text.Trim() + " correctamente por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                             // se muestra mensaje de exito y se actualiza la lista
                             MessageBox.Show("El Usuario se ha actualizado correctamente", ":)", MessageBoxButtons.OK);
                             LimpiarFormulario();
                             LlenarListaUsuarios(CboxVerActivos.Checked);
+
+                           
+
                         }
                         else
                         {
                             MessageBox.Show("Ha ocurrido un error y no se actualizo el usuario!", ":(", MessageBoxButtons.OK);
+
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se trato de manera fallida actualizar un usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
+
                         }
                     }
                 }
@@ -457,14 +494,22 @@ namespace TicketsMauricioGonzalez.Formularios
                     {
                         if (MiUsuarioLocal.Eliminar())
                         {
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se desactivo un usuario cuyo Cód es: " + txtIDUsuario.Text.Trim() + " correctamente por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                             // se muestra mensaje de exito y se actualiza la lista
                             MessageBox.Show("El Usuario se ha desactivado correctamente", ":)", MessageBoxButtons.OK);
                             LimpiarFormulario();
                             LlenarListaUsuarios(CboxVerActivos.Checked);
+
+                            
                         }
                         else
                         {
                             MessageBox.Show("Ha ocurrido un error y no se elimino el usuario!", ":(", MessageBoxButtons.OK);
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se trato de desactivar de manera fallida un usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                         }
                     }
 
@@ -479,14 +524,21 @@ namespace TicketsMauricioGonzalez.Formularios
                     {
                         if (MiUsuarioLocal.Activar())
                         {
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se activo un usuario cuyo Cód es: " + txtIDUsuario.Text.Trim() + " correctamente por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email + " cuyo ID es: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                             // se muestra mensaje de exito y se actualiza la lista
                             MessageBox.Show("El Usuario se ha activado correctamente", ":)", MessageBoxButtons.OK);
                             LimpiarFormulario();
                             LlenarListaUsuarios(CboxVerActivos.Checked);
+                            
                         }
                         else
                         {
                             MessageBox.Show("Ha ocurrido un error y no se activo el usuario!", ":(", MessageBoxButtons.OK);
+                            Logica.Models.Bitacora MiBitacora = new Logica.Models.Bitacora();
+                            string accion = "Se trato de activar de manera fallida un usuario por el Usuario: " + Commons.ObjetosGlobales.MiUsuarioDeSistema.Email;
+                            MiBitacora.GuardarAccionBitacora(accion, Commons.ObjetosGlobales.MiUsuarioDeSistema.IDUsuario);
                         }
                     }
 
