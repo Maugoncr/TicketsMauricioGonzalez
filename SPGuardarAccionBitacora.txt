@@ -1,0 +1,23 @@
+USE [Tickets]
+GO
+/****** Object:  StoredProcedure [dbo].[SPGuardarAccionBitacora]    Script Date: 16/12/2021 10:49:31 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SPGuardarAccionBitacora]
+@Accion varchar(3000),
+@IDUsuario int = NULL
+
+AS
+BEGIN
+
+	SET NOCOUNT OFF;
+
+		INSERT INTO BITACORA
+			(IDUsuario, Accion)
+			VALUES
+			(@IDUsuario, @Accion)
+
+END
